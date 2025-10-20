@@ -1,83 +1,31 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🎃🦈 Gelukkige Verjaardag Aster! 👻</title>
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      text-align: center;
-      background: linear-gradient(135deg, #000000, #ff7518);
-      color: #fff;
-      overflow: hidden;
-      height: 100vh;
-      margin: 0;
-      padding: 20px;
-    }
-    h1 {
-      font-size: 2.5em;
-      margin-top: 50px;
-      text-shadow: 2px 2px #000;
-    }
-    p {
-      font-size: 1.2em;
-      margin-top: 20px;
-    }
-    img {
-      margin-top: 30px;
-      width: 150px;
-    }
-    .moving {
-      position: absolute;
-      font-size: 2em;
-      animation: move linear infinite;
-    }
-    @keyframes move {
-      0% { transform: translateY(-50px) translateX(0) rotate(0deg);}
-      100% { transform: translateY(100vh) translateX(50vw) rotate(360deg);}
-    }
-    .shark {
-      font-size: 50px;
-      animation-duration: 8s;
-    }
-    .ghost {
-      font-size: 30px;
-      animation-duration: 4s;
-    }
-    .pumpkin {
-      font-size: 40px;
-      animation-duration: 5s;
-    }
-  </style>
-</head>
-<body>
-  <h1>🎃🦈 Gelukkige Verjaardag, Aster! 👻</h1>
-  <p>Een griezelig leuke verjaardag gewenst op 27 oktober! 🕸️🖤</p>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🎃🦈 Gelukkige Verjaardag Aster! 👻</title>
+<style>
+  body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    background: linear-gradient(to bottom, #ff7518, #000000);
+    color: #fff;
+    margin: 0;
+    padding: 20px;
+    overflow: hidden;
+    height: 100vh;
+  }
+  h1 {
+    font-size: 2.5em;
+    margin-top: 50px;
+    text-shadow: 2px 2px #000;
+  }
+  p {
+    font-size: 1.2em;
+    margin-top: 20px;
+  }
+  .emoji {
 
-  <img src="https://media.giphy.com/media/3o6ZtaO9BZHcOjmErm/giphy.gif" alt="Halloween">
 
-  <!-- Beweegbare geesten, pompoenen en haaien -->
-  <script>
-    const items = ['👻','🎃','🦈','🕷️','🕸️'];
-    for(let i=0; i<50; i++){
-      let elem = document.createElement('div');
-      elem.classList.add('moving');
-      elem.style.left = Math.random()*100 + 'vw';
-      let type = items[Math.floor(Math.random()*items.length)];
-      elem.innerText = type;
-      
-      // Pas grootte aan
-      if(type === '🦈') elem.classList.add('shark');
-      else if(type === '👻') elem.classList.add('ghost');
-      else if(type === '🎃') elem.classList.add('pumpkin');
-      
-      // Willekeurige duur
-      elem.style.animationDuration = 3 + Math.random()*5 + 's';
-      document.body.appendChild(elem);
-    }
-  </script>
-</body>
-</html>
 
 
