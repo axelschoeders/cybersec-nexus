@@ -17,12 +17,12 @@
   }
   h1 {
     font-size: 3em;
-    margin-top: 50px;
+    margin-top: 40px;
     text-shadow: 2px 2px #000;
   }
   p {
     font-size: 1.5em;
-    margin-top: 20px;
+    margin-top: 10px;
   }
   .emoji-container {
     position: relative;
@@ -48,11 +48,21 @@
 <div class="emoji-container" id="container"></div>
 
 <script>
-const emojis = ['👻','🎃','🕷️','🕸️']; // geen haaien meer 🙂
+const emojis = ['👻','🎃','🕷️','🕸️'];
 const container = document.getElementById('container');
 
 for(let i=0; i<30; i++){
   let e = document.createElement('div');
   e.classList.add('emoji');
-  e.innerText = emojis[Math.floor(Math.r]()
+  e.innerText = emojis[Math.floor(Math.random()*emojis.length)];
+  e.style.left = Math.random()*90 + 'vw';
+  e.style.top = Math.random()*-50 + 'px';
+  e.style.animationDuration = (5 + Math.random()*5) + 's';
+  e.style.fontSize = (30 + Math.random()*40) + 'px';
+  container.appendChild(e);
+}
+</script>
+</body>
+</html>
+
 
