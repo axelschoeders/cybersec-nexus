@@ -30,7 +30,10 @@ body {
   pointer-events:none;
   animation: mistmove 60s linear infinite;
 }
-@keyframes mistmove { from {background-position:0 0;} to {background-position:1000px 0;} }
+@keyframes mistmove { 
+  from {background-position:0 0;} 
+  to {background-position:1000px 0;} 
+}
 
 h1 {
   font-size: 3rem;
@@ -66,9 +69,16 @@ h1 {
   transition: all 0.3s;
   margin-top: 20px;
 }
-.btn:hover { background: #ff5500; transform: scale(1.1); }
+.btn:hover { 
+  background: #ff5500; 
+  transform: scale(1.1); 
+}
 
-footer { margin-top: 50px; font-size: 0.9rem; color:#ff7518; }
+footer { 
+  margin-top: 50px; 
+  font-size: 0.9rem; 
+  color:#ff7518; 
+}
 
 .sharks {
   font-size: 2rem;
@@ -91,19 +101,25 @@ footer { margin-top: 50px; font-size: 0.9rem; color:#ff7518; }
   100% { transform: translateY(110vh) rotate(360deg); opacity: 0.7; }
 }
 
+/* Popup */
 #surprise {
   display:none;
   position:fixed;
   top:0; left:0; width:100%; height:100%;
-  background: rgba(0,0,0,0.9);
+  background: rgba(0,0,0,0.95);
   color:#ff7518;
-  display:flex;
   justify-content:center;
   align-items:center;
   flex-direction:column;
   z-index:10;
   font-size:2rem;
   text-align:center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+#surprise.show {
+  display:flex;
+  opacity: 1;
 }
 
 .confetti {
@@ -111,7 +127,10 @@ footer { margin-top: 50px; font-size: 0.9rem; color:#ff7518; }
   font-size:1.5rem;
   animation: drop 3s linear forwards;
 }
-@keyframes drop { 0%{transform:translateY(0);} 100%{transform:translateY(100vh); opacity:0;} }
+@keyframes drop { 
+  0%{transform:translateY(0);} 
+  100%{transform:translateY(100vh); opacity:0;} 
+}
 
 /* Spookjes */
 .ghost {
@@ -153,14 +172,15 @@ footer { margin-top: 50px; font-size: 0.9rem; color:#ff7518; }
 <div id="surprise">
   <h2>🎉 Verrassing, Aster! 🎉</h2>
   <p>Fijne verjaardag vol lachen, liefde en haaien! 🦈🎃</p>
-  <audio id="song" controls></audio>
+  <audio id="song" controls>
+    <source src="https://axelschoeders.github.io/cybersec-nexus/happy-birthday-jazz-171120.mp3" type="audio/mpeg">
+    Je browser ondersteunt geen audio.
+  </audio>
   <button class="btn" onclick="hideSurprise()">Sluiten ✨</button>
 </div>
 
 <script>
-// Voeg de muziek toe vanuit GitHub
 const song = document.getElementById('song');
-song.src = happy-birthday-jazz-171120.mp3';
 
 const pumpkins = ['🎃','🦇','👻','🕷️'];
 for(let i=0;i<15;i++){
@@ -174,9 +194,12 @@ for(let i=0;i<15;i++){
 
 function showSurprise(){
   const surprise = document.getElementById('surprise');
-  surprise.style.display='flex';
-  song.play().catch(()=>{console.log("Klik op play als autoplay geblokkeerd is")});
+  surprise.classList.add('show');
+  song.play().catch(() => {
+    console.log("Klik op play als autoplay geblokkeerd is");
+  });
 
+  // 🎉 Confetti
   for(let i=0;i<50;i++){
     let confetti = document.createElement('div');
     confetti.classList.add('confetti');
@@ -188,9 +211,12 @@ function showSurprise(){
   }
 }
 
-function hideSurprise(){ document.getElementById('surprise').style.display='none'; }
+function hideSurprise(){
+  const surprise = document.getElementById('surprise');
+  surprise.classList.remove('show');
+  setTimeout(()=>{ surprise.style.display='none'; }, 500);
+}
 </script>
 
 </body>
 </html>
-
