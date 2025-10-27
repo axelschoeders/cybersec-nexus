@@ -1,108 +1,162 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🎉 Happy Birthday Aster! 🎉</title>
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      background: #ffcc00;
-      color: #333;
-      text-align: center;
-      padding: 50px;
-    }
-    h1 {
-      color: #ff6600;
-      font-size: 3em;
-    }
-    #surprise {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: rgba(0, 0, 0, 0.8);
-      color: white;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      z-index: 1000;
-    }
-    #surprise h2 {
-      font-size: 2em;
-      margin-bottom: 20px;
-    }
-    .confetti {
-      position: absolute;
-      font-size: 2em;
-      animation: confetti 3s ease-in-out infinite;
-    }
-    @keyframes confetti {
-      0% { transform: translateY(0) rotate(0); }
-      100% { transform: translateY(100vh) rotate(360deg); }
-    }
-    #video {
-      display: none;
-      margin-top: 30px;
-    }
-    audio {
-      width: 100%;
-      max-width: 600px;
-      margin-top: 20px;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🎃 Happy Birthday Aster! 🦈</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+
+  body {
+    margin:0;
+    padding:0;
+    font-family: 'Creepster', cursive;
+    background: linear-gradient(to bottom, #0b0b0b, #2e2e2e);
+    color: #fff;
+    text-align: center;
+    overflow-x: hidden;
+  }
+  h1 {
+    font-size: 3rem;
+    margin-top: 40px;
+    color: #ff7518;
+    text-shadow: 0 0 10px #ff7518, 0 0 20px #ff5500;
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+  @keyframes glow {
+    0% { text-shadow: 0 0 10px #ff7518, 0 0 20px #ff5500; }
+    100% { text-shadow: 0 0 25px #ff7518, 0 0 35px #ff5500; }
+  }
+  .card {
+    background: rgba(0,0,0,0.7);
+    border: 2px solid #ff7518;
+    border-radius: 20px;
+    margin: 40px auto;
+    padding: 30px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 0 20px #ff5500;
+  }
+  .btn {
+    background: #ff7518;
+    padding: 15px 25px;
+    border-radius: 12px;
+    border:none;
+    color:#fff;
+    font-size: 1.2rem;
+    cursor:pointer;
+    transition: all 0.3s;
+    margin-top: 20px;
+  }
+  .btn:hover { background: #ff5500; transform: scale(1.1); }
+  footer {
+    margin-top: 50px;
+    font-size: 0.9rem;
+    color:#ff7518;
+  }
+  .sharks {
+    font-size: 2rem;
+    margin-top: 20px;
+    animation: swim 6s infinite linear;
+  }
+  @keyframes swim {
+    0% { transform: translateX(-100vw); }
+    100% { transform: translateX(100vw); }
+  }
+  .pumpkin {
+    position: fixed;
+    top: -50px;
+    font-size: 2rem;
+    animation: fall linear infinite;
+  }
+  @keyframes fall {
+    0% { transform: translateY(-50px) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(110vh) rotate(360deg); opacity: 0.7; }
+  }
+  #surprise {
+    display:none;
+    position:fixed;
+    top:0; left:0; width:100%; height:100%;
+    background: rgba(0,0,0,0.9);
+    color:#ff7518;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    z-index:10;
+    font-size:2rem;
+    text-align:center;
+  }
+  .confetti {
+    position:absolute;
+    font-size:1.5rem;
+    animation: drop 3s linear forwards;
+  }
+  @keyframes drop {
+    0%{transform:translateY(0);}
+    100%{transform:translateY(100vh); opacity:0;}
+  }
+</style>
 </head>
 <body>
-  <h1>🎉 Happy Birthday, Aster! 🎉</h1>
-  <p>Hieperdepiep hoera, Aster!</p>
-  <p>Hopelijk wordt je verjaardag net zo cool als een haai met een pompoen op z’n kop.</p>
+
+<h1>🎃 Happy Birthday, Aster! 🦈</h1>
+
+<div class="card">
+  <p>Hieperdepiep hoera, Aster! 🥳</p>
+  <p>Hopelijk wordt je verjaardag net zo cool als een haai met een pompoen op z’n kop. 😆🦈🎃</p>
   <p>Geniet van de dag vol snoep, lach en griezelige verrassingen!</p>
-  <button onclick="showSurprise()">Klik hier voor een verrassing!</button>
-  <footer>Gemaakt met ❤️ door Axel</footer>
+  <button class="btn" onclick="showSurprise()">🎁 Klik hier voor een verrassing!</button>
+</div>
 
-  <div id="surprise">
-    <h2>Verrassing, Aster!</h2>
-    <p>Je bent geweldig!</p>
-    <p>Fijne verjaardag vol lachen, liefde en haaien!</p>
-    <button onclick="closeSurprise()">Sluiten ✨</button>
-  </div>
+<div class="sharks">🦈🦈🦈🦈🦈</div>
 
-  <div id="video">
+<footer>Gemaakt met 💻 & 💜 door Axel</footer>
+
+<div id="surprise">
+  <h2>🎉 Verrassing, Aster! 🎉</h2>
+  <p>Fijne verjaardag vol lachen, liefde en haaien! 🦈🎃</p>
+  <div id="video" style="margin-top:30px;">
     <audio id="song" controls autoplay>
-      <source src=https://pixabay.com/nl/music/speciale-gelegenheden-happy-birthday-jazz-171120/type="audio/mpeg">
+      <source src="https://axelschoeders.github.io/cybersec-nexus/happy-birthday-jazz.mp3" type="audio/mpeg">
       Je browser ondersteunt geen audio.
     </audio>
   </div>
+  <button class="btn" onclick="hideSurprise()">Sluiten ✨</button>
+</div>
 
-  <script>
-    function showSurprise() {
-      const surprise = document.getElementById('surprise');
-      surprise.style.display = 'flex';
-      document.getElementById('video').style.display = 'block';
+<script>
+  const pumpkins = ['🎃','🦇','👻','🕷️'];
+  for(let i=0;i<15;i++){
+    let pumpkin = document.createElement('div');
+    pumpkin.classList.add('pumpkin');
+    pumpkin.textContent = pumpkins[Math.floor(Math.random()*pumpkins.length)];
+    pumpkin.style.left = Math.random()*100+'vw';
+    pumpkin.style.animationDuration = (Math.random()*5+5)+'s';
+    document.body.appendChild(pumpkin);
+  }
 
-      // 🎵 Speel de muziek af
-      const song = document.getElementById('song');
-      song.play();
-
-      // 🎊 Confetti
-      for (let i = 0; i < 50; i++) {
-        let confetti = document.createElement('div');
-        confetti.classList.add('confetti');
-        confetti.textContent = ['✨', '🎉', '🦈', '🎃'][Math.floor(Math.random() * 4)];
-        confetti.style.left = Math.random() * 100 + 'vw';
-        confetti.style.animationDuration = (Math.random() * 2 + 2) + 's';
-        surprise.appendChild(confetti);
-        setTimeout(() => confetti.remove(), 3000);
-      }
+  function showSurprise(){
+    document.getElementById('surprise').style.display='flex';
+    document.getElementById('video').style.display='block';
+    const song = document.getElementById('song'); song.play();
+    for(let i=0;i<50;i++){
+      let confetti = document.createElement('div');
+      confetti.classList.add('confetti');
+      confetti.textContent = ['✨','🎉','🦈','🎃'][Math.floor(Math.random()*4)];
+      confetti.style.left = Math.random()*100+'vw';
+      confetti.style.animationDuration = (Math.random()*2+2)+'s';
+      document.getElementById('surprise').appendChild(confetti);
+      setTimeout(()=>confetti.remove(),3000);
     }
+  }
 
-    function closeSurprise() {
-      const surprise = document.getElementById('surprise');
-      surprise.style.display = 'none';
-    }
-  </script>
+  function hideSurprise(){
+    document.getElementById('surprise').style.display='none';
+  }
+</script>
+
 </body>
 </html>
+
 
