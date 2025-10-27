@@ -11,6 +11,7 @@
       font-family: 'Comic Sans MS', cursive, sans-serif;
       text-align: center;
       padding: 40px;
+      overflow: hidden;
       background-image: url('https://www.transparenttextures.com/patterns/dark-mosaic.png');
     }
     h1 {
@@ -47,6 +48,18 @@
       font-size: 0.9rem;
       color: #ff7518;
     }
+    /* 🎃 Vallende pompoenen */
+    .pumpkin {
+      position: fixed;
+      top: -50px;
+      font-size: 2rem;
+      animation: fall linear infinite;
+      pointer-events: none;
+    }
+    @keyframes fall {
+      0% { transform: translateY(-50px) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(110vh) rotate(360deg); opacity: 0.7; }
+    }
   </style>
 </head>
 <body>
@@ -54,6 +67,36 @@
 
   <div class="card">
     <p>Hieperdepiep hoera, Aster! 🥳</p>
-    <p
+    <p>Hopelijk wordt je verjaardag net zo cool als een haai met een pompoen op z’n kop. 😆🦈🎃</p>
+    <p>Geniet van de dag vol snoep, lach en griezelige verrassingen!</p>
+  </div>
 
+  <div class="sharks">🦈🦈🦈🦈🦈</div>
+
+  <footer>
+    Gemaakt met 💻 & 💜 door [jouw naam]
+  </footer>
+
+  <!-- 🔊 Halloween muziek -->
+  <audio autoplay loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/09/07/audio_2cf9b7f3a5.mp3?filename=halloween-theme-122276.mp3" type="audio/mpeg">
+    Je browser ondersteunt geen audio 🎵
+  </audio>
+
+  <script>
+    // 🎃 Pompoenregen
+    const pumpkins = ['🎃', '🦇', '👻', '🕷️'];
+    const count = 15;
+
+    for (let i = 0; i < count; i++) {
+      let pumpkin = document.createElement('div');
+      pumpkin.classList.add('pumpkin');
+      pumpkin.textContent = pumpkins[Math.floor(Math.random() * pumpkins.length)];
+      pumpkin.style.left = Math.random() * 100 + 'vw';
+      pumpkin.style.animationDuration = (Math.random() * 5 + 5) + 's';
+      document.body.appendChild(pumpkin);
+    }
+  </script>
+</body>
+</html>
 
